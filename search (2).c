@@ -1,66 +1,74 @@
-#include "catcafe.h"
+#include "book.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-void search(catcafe *arr, int n)
+void search(book *arr, int n)
 {
-	int key;
-	printf("Поиск:\n 1.Название\n 2.Рейтинг\n 3.Цена за час\n");
-	scanf("%d", &key);
-	switch(key)
+	int digit;
+	
+	printf("Search:\n|1. Name\n|2. Type\n|3. Number\n");
+	
+	scanf("%d", &digit);
+	
+	switch(digit)
 	{
 		case 1:{
-			char key1[40];
+			char tag[40];
 			int found = 0;
-			printf("Введите название: ");
-			scanf("%s",key1);
+			printf("Enter a name: ");
+			
+			scanf("%s",tag);
+			
 			for(int i = 0; i<n; i++)
 			{
-				if(!strcmp(arr[i].name,key1))
+				if(!strcmp(arr[i].name,tag))
 				{
-					printf("Совпадение найдено:\n Название: %s\n Рейтинг: %d\n Цена за час: %d\n", arr[i].name, arr[i].rating, arr[i].price);
+					printf("A match found: %s %s %d\n", arr[i].name, arr[i].type, arr[i].number);
 					found = 1;
 				}
-
 			}
-			if (!found) printf("Совпадений не найдено\n");
+			if (!found) printf("Couldn't find any matches\n\n");
 			break;
 		}
 		case 2:{
-			double key2;
+			char tag[40];
 			int found = 0;
-			printf("Введите рейтинг: ");
-			scanf("%lf",&key2);
+			printf("Enter a type: ");
+			
+			scanf("%s",tag);
+			
 			for(int i = 0; i<n; i++)
 			{
-				if(arr[i].rating == key2)
+				if(!strcmp(arr[i].type, tag))
 				{
-					printf("Совпадение найдено:\n Название: %s\n Рейтинг: %d\n Цена за час: %d\n", arr[i].name, arr[i].rating, arr[i].price);
+					printf("A match found: %s %s %d\n", arr[i].name, arr[i].type, arr[i].number);
 					found = 1;
 				}
 			}
-			if (!found) printf("Совпадений не найдено\n");
+			if (!found) printf("Couldn't find any matches\n\n");
 			break;
 		}
 		case 3:{
-			double key3;
+			int tag;
 			int found = 0;
-			printf("Введите цену за час: ");
-			scanf("%lf",&key3);
+			printf("Enter a number: ");
+			
+			scanf("%d",&tag);
+			
 			for(int i = 0; i<n; i++)
 			{
-				if(arr[i].price == key3)
+				if(arr[i].number==tag)
 				{
-					printf("Совпадение найдено:\n Название: %s\n Рейтинг: %d\n Цена за час: %d\n", arr[i].name, arr[i].rating, arr[i].price);
+					printf("A match found: %s %s %d\n", arr[i].name, arr[i].type, arr[i].number);
 					found = 1;
 				}
 			}
-			if (!found) printf("Совпадений не найдено\n");
+			if (!found) printf("Couldn't find any matches\n\n");
 			break;
 		}
 		default:
 			break;
 	}
-	printf("\n");
+	printf("%c",'\n');
 }
