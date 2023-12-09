@@ -7,27 +7,27 @@ int main(){
 	int stop = 0;
 	while(stop != 1){
 		int keybd;
-		printf("1 - Р—Р°РіСЂСѓР·РёС‚СЊ Р±Рґ, 2 - Р’С‹РІРµСЃС‚Рё Р±Рґ, 3 - РџРѕРёСЃРє \n");
+		printf("1 - Загрузить бд, 2 - Вывести бд, 3 - Поиск \n");
 		scanf("%d", &keybd);
 		switch(keybd){
 			case 1:{
 				int keybd2;
-				printf("1 - РЎРѕР·РґР°С‚СЊ, 2 - РџСЂРѕС‡РёС‚Р°С‚СЊ\n");
+				printf("1 - Создать, 2 - Прочитать\n");
 				scanf("%d", &keybd2);
 			if(keybd2 == 1){
 				create(&arr, &n);
 				if(!arr)
-					printf("РћС€РёР±РєР° СЃРѕР·РґР°РЅРёСЏ \n");
+					printf("Ошибка создания \n");
 				else
-					printf("РЎРѕР·РґР°РЅРЅРѕ %d СЌР»РµРјРµРЅС‚РѕРІ \n", n);
+					printf("Созданно %d элементов \n", n);
 				write(arr, n);
 			}
 			else{
 				read(&arr, &n);
 				if(!arr)
-					printf("РћС€РёР±РєР° С‡С‚РµРЅРёСЏ \n");
+					printf("Ошибка чтения \n");
 				else
-					printf("Р—Р°РіСЂСѓР¶РµРЅРЅРѕ %d СЌР»РµРјРµРЅС‚РѕРІ \n", n);
+					printf("Загруженно %d элементов \n", n);
 			}
 				break;
 			}
