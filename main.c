@@ -16,8 +16,11 @@ int main(){
 				scanf("%d", &keybd2);
 			if(keybd2 == 1){
 				create(&arr, &n);
-				if(!arr)
+				if(!arr){
 					printf("Ошибка создания \n");
+					while((getchar())!='\n');
+					return 0;
+						}
 				else
 					printf("Созданно %d элементов \n", n);
 				write(arr, n);
