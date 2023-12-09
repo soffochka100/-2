@@ -8,11 +8,11 @@ void create(catcafe ** arr, int * n){
 		return;
 	*arr = (catcafe *)calloc(*n, sizeof(catcafe));
 	for (int i = 0; i < * n; i++){
-		printf("РќР°Р·РІР°РЅРёРµ = ");
+		printf("Название = ");
 		scanf("%s", (*arr)[i].name);
-		printf("Р РµР№С‚РёРЅРі = ");
+		printf("Рейтинг = ");
 		scanf("%d", &(*arr)[i].rating);
-		printf("Р¦РµРЅР° Р·Р° С‡Р°СЃ = ");
+		printf("Цена за час = ");
 		scanf("%d", &(*arr)[i].price);
 	}
 }
@@ -48,5 +48,5 @@ fclose(fp);
 }	
 void print(catcafe * arr, int n){
 	for(int i = 0; i < n; i++)
-					printf("РќР°Р·РІР°РЅРёРµ: %s\n Р РµР№С‚РёРЅРі: %d\n Р¦РµРЅР° Р·Р° С‡Р°СЃ: %d \n", arr[i].name, arr[i].rating, arr[i].price);
+					printf("Название: %s\n Рейтинг: %d\n Цена за час: %d \n", arr[i].name, arr[i].rating, arr[i].price);
 }	
