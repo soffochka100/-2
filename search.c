@@ -41,6 +41,8 @@ void search(catcafe *arr, int n)
 				}
 			}
 			if (!found) printf("Совпадений не найдено\n");
+			{while((getchar())!='\n');	
+				return ;}
 			break;
 		}
 		case 3:{
@@ -58,7 +60,7 @@ void search(catcafe *arr, int n)
 			}
 			if (!found) printf("Совпадений не найдено\n");
 			{while((getchar())!='\n');	
-				return 0;}
+				return ;}
 			break;
 		}
 		default:
