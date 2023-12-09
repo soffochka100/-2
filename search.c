@@ -57,6 +57,8 @@ void search(catcafe *arr, int n)
 				}
 			}
 			if (!found) printf("Совпадений не найдено\n");
+			{while((getchar())!='\n');\	
+				return 0;}
 			break;
 		}
 		default:
