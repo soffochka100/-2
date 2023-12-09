@@ -7,3 +7,4 @@ void create(catcafe ** arr, int * n);
 void read(catcafe ** arr, int * n);
 void write(catcafe * arr, int n);
 void search(catcafe * arr, int n);
+void print(catcafe * arr, int n);
